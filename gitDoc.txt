@@ -1,0 +1,41 @@
+git config --global user.name "username" (Aenderung des Nutzernamen)
+git config --global user.email "email" (Aenderung der email)
+pwd ordnerausabe in dem man sich befindet
+cd /C/pfad wechsel verzeichnis (ganzes Verzeichnis muss angegeben werden)
+cd .. zurück zum übergeordneten Verzeichnis
+cd Verzeichnis (wächsel zum Verzeichnis(Bedingung: teil des Verzeichnisses in dem man sich befindet))
+clear leert die Console
+ls Ausabe des aktuellen Ordners
+mv verschiebung eines Elements (Bsp.: mv test.txt Anderer\ Ordner) 
+\ falls Leerzeichen im name enthalten ist
+mv test.txt .. Verschiebung in höheres Verzeichnis
+mv test.txt nameAendern.txt (namen ändern bedingung: name darf nicht existieren) datei Endung muss mit angegeben werden 
+rm test.txt (Löscht die Datei !Vorsicht datei wird endgültig gelöscht)
+mkdir OrdnerName (erstellt neues Verzeichnis)
+cd (wechselt koplett zurück ins Hauptverzeichnis)
+ls -la (zeigt versteckte dateien an)
+
+
+git init (erstellt Repository)
+git status (aktueller status des Repository)
+git add test.txt (fügt datei zur staging area hinzu (zwischenschritt))
+git add . (fügt alle dateien hinzu)
+git commit (neuer comit updatet die Versionen des "Programs")
+git commit -m "Nachricht" (zusätzliche Nachricht z.B. was verändert Wurde)
+git log (commit history)
+git checkout hashcode(zu finden nach commit(git log) ist eine lange folge von zahlen und Buchstaben, ändert welche Version benutzt wird(welche der "Head" ist))
+git checkout main(Branchname) (wechselt zurück zum Branch den man will(aktuellste version))
+.gitignore (angabe von dateiendungen die nicht comittet werden sollen)
+git pull (updatet lokales directory zum aktuellen)
+
+git Lab:
+git clone url (url = need to click clone(ssh), to get local acces to the project)
+ssh-keygen (creating public/private key)
+cat /c/Users/Angelus/.ssh/id_rsa (private key, rsa.pub public key)
+git push (bring your local changes to the real project on the server)
+git diff --name-status (zeigt was verändert wurde)
+
+Short cats:
+Shift Einfuegen kopiertes einsentzen(statt ctrl v)
+Pfeiltaste nach oben für letzten Befehl
+Tab (Tab Tab)auto Vervollständigung

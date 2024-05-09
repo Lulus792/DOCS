@@ -1,0 +1,171 @@
+which $SHELL            # tells you which shell you use
+echo "text"             # prints the text between ""
+clear                   # clears the terminal
+ls                      # gives you a overview of everything in the folder
+ls -l                   # gives you overview + the rights for the files/folder
+ls -al                  # shows also hidden ordner
+
+variable:
+    name="text"         # you can asign variables like that(no space between variable name and =)
+    $name               # to use the variable
+    
+Attributes:
+    read variable name  # get user input
+    name=$1             # you have to give a parameter when calling name.sh name
+    lastname=$2         # name.sh name lastname
+whoami                  # tells you at what you are locked in( echo $USER)
+pwd                     # gives you the directory your in( echo $PWD)
+date                    # vies you the exact date
+name=$(<command>)       # asigning a commadn to a variable
+$RANDOM                 # gives a random number between 0 - 32767( use echo for printing)
+$HOSTNAME               # gives name of maschine( use echo for printing)
+name="text"             # variable in bash
+export name             # makes the variable globaly accesable(for example in a file[name.sh])
+
+nano .bashrc            # variables and other stuff that are always existing
+    export name="text"  # this variable can always be acessed even after restarting
+$((math))               # for math in bash(example echo $((2 + 3)) result 5, no floating number by default)
+$((10 % 3))             # gives us the leftovers(example = 1)
+
+Conditionals:           # operator <, >, ==, <=, >=, !=, add other statement || (or), && (and)
+    if [[ $variable == "condition" ]]; then
+        do stuff        # doesn't need to be indentet
+    elif [[ $variable == "condition2" ]]
+        do other stuff; then
+    else
+        do other stuff
+fi
+
+# comment               # comment
+exit 1                  # exits the script (finishes programm)
+------------------
+case $class             # for many possibylities
+
+    statement)
+        do stuff
+        ;;
+    statement2)
+        so other stuff
+        ;;
+esac
+------------------
+while [[ condition ]]
+do
+    stuff
+donw
+------------------
+example:
+x=1
+while [[ x -le 100 ]]   # less than 100
+do
+    echo "$x"
+    (( x ++ ))
+done
+------------------
+read -p "you can write text and get input"
+------------------
+until [[ variable == condition ]]
+do
+    stuff
+done
+------------------
+for variable in {1..10};    # in range(1,10) (like in python)
+do
+    stuff
+done
+------------------
+ping -q -c 2 -w 1 address   
+# -q        - ping quiet
+# -c 2      - ping only 2 times
+# -w 1      - wait only 1s
+
+
+read file:
+----------
+x=1
+while read -r line; do  # r- read
+echo "Line $x $line"
+(( x ++ ))
+done < name             # name of file
+----------
+
+cat name.txt            # gives me a list of every line
+curl -s http://link     # gives me everything that stands on that website
+break                   # breaks out of the loop
+continue                # skip the loop
+
+
+
+nano name.sh            # opens(create) the file in an text editor(nano)
+------------
+#!/bin/bash             # Shebang(#!) the rest is to tell which language to run
+
+save file:
+ctrl + x                # to save
+y                       # ask you if you wanna save it
+enter                   # ask you the name
+------------
+
+
+
+importent command
+-----------------
+bash name.sh                    # lets you run your bash file
+./name.sh                       # lets you execute the file(need to add rights before)
+sudo <command>                  # executes command as admin
+su user                         # change user(main is "root")
+adduser nameuser                # adds a user
+cp name.sh /home/user/name.sh   #makes a copy
+-----------------
+
+chmod                   # rechte ändern
+-----
+Benutzerkategorie:
+    u - Besitzer
+    g - Gruppe
+    o - Andere
+    a - All
+    
+Operator:
+    + - Rechte hinzufügen
+    - - Rechte entfernen
+    = - Rechte explizit setzen
+    
+Rechte:
+    r - read
+    w - write
+    x - execute
+    
+chmod[Benutzerkategorie][Operator][Rechte]
+
+example:
+    chmod u+x name.sh
+    chmod a-rwx name.sh
+    chmod g=rw /folder
+    
+Optionen:
+    -v steht für "verbose" und Zeigt alles an was der Befehl mv gerade macht
+    -c Wie "-v" aber nur, wenn acuh etwas geändert wird
+    -f Unterdrückt Fehlermeldung(-silent, -quiet)
+    -R alle Ordner und Unterordner inkl. Dateien werden geändert(ganzer Verzeichnisbaum)
+Benutzerkategorie:
+
+    erste Stelle - Besitzer
+    zweite Stelle - Gruppe
+    dritte Stelle - Andere
+    
+Rechte:
+    7 = Voll
+    6 = Lesen und Schreiben
+    5 = Lesen und Ausführen
+    4 = Nur Lesen
+    3 = Schreiben und ausführen
+    2 = Nur Schreiben
+    1 = Nur Ausführen
+    0 = keine
+    
+example:
+    chmod -v 777 name.sh
+    chmod -R 700 /folder1/folder2
+    chmod u=rw,g=rw,o=r name.txt
+-----
