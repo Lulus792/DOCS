@@ -1,0 +1,20 @@
+Prefix:             CTRL + b (standard -> changed to CTRL + a)
+Hsplit:             Prefix + "
+move up down:       Prefix + arrow keys
+close split:        Prefix + x
+Vsplit:             Prefix + SHIFT + 5
+enter Tmux command: Prefix + :
+: TAB:              for help
+example:
+  :new window
+  :rename window
+  etc
+Zoom in:            Prefix + z
+Zoom out:           Prefix + o
+
+tmux new -s <name>  to start a new session
+tmux detach   -   ends the session
+tmux ls       -   shows a list of the started sessions
+tmux attach -t <name>   -   to reopen sesssion
+<Prefix> + s  -   shows a list with the sessions
+  - switch with <k>/<r>

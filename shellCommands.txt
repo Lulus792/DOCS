@@ -1,0 +1,18 @@
+sudo !!   // executes last command but with sudo
+Ctrl + k  // deletes rest of line
+Ctrl + y  // restores the deletet part
+Ctrl + u  // deletes to the start of the line
+Ctrl + w  // kils word backwords
+
+// combination
+example forgeting sudo:
+  ctrl + u
+  sudo ctrl + y
+
+
+ctrl + x + e opens a buffer
+example smaller for loop(bash) that does not need to
+be saved, but you wanna read it simply write it in the buffer
+
+
+reset   // if problems can fix
