@@ -1,0 +1,145 @@
+Vim
+---
+vim namefile                        # to start
+:q enter                            # to exit vim
+:q! enter                           # ignore changes
+:!<command>                         # executes terminal command
+:w                                  # to save
+:wq                                 # saves and quit
+:set number                         # shows line numbers
+:set relativenumber                 # linenumber from cursor
+:set mouse=a                        # 'avtivates mouse' to select lines etc
+:set tabstop=4                      # tab = 4
+:set shiftwidth=4
+:colorscheme tab                    # move with tab:
+:colorscheme slate                  # what i will use
+:<number of line>                   # jumps to the given line     
+:%s/word/newword/g                  # replaces in whole file word with newword
+    ##### % only if in whole file otherwise select the lines before #####
+
+
+! every command can be combined with numbers before
+number <command>
+example:
+    10u                              # undo the last 10 things
+    10h                              # goes 10 charecter left
+    10p                             # pasting 10 times
+    10w                             # jumps 10 words
+    etc.
+
+
+modes
+-----
+normal                              # every key functionality(when opened)
+    u                               # undo action(ctrl + z in vim)(t=moment you enter 
+                                      insert and leave insert)
+    ctrl + r                        # redos
+    0                               # goes to the beginning of a line
+    $                               # goes to the end of a line
+    t<symbol>                       # jumps before the given 'symbol' in the same line
+    T (t backwords)
+    f<symbol>                       # jumps to that 'symbol'
+    F (f backwords)
+    gg                              # jumps to the start of the file
+    G                               # jumpos to the end of the file
+    .                               # execute last command
+        dd <enter> .                # would repeate dd
+    combination:
+        d0                          # everything till beginning
+        d$                          # everything till end
+        dt<symbol>                  # deletes everything till that 'symbol'
+    
+insert mode                         # with i/a/o
+    i                               # before cursor
+    a                               # after cursor
+    o                               # opens with new line
+    shift + i (I)                   # starts at the beginning of the line
+    shift + a (A)                   # starts at the end of the line
+    shift + o (O)                   # starts with a new line above the cursor
+    esc                             # gets me back to normal mode
+    
+Visual mode
+-----------
+    v                               # enter visual mode
+    hjkl                            # same movement, if move 'lines' get marked
+    d                               # deletes
+    dd                              # deletes whole line
+    D                               # deletes the rest of the line
+    y                               # coipies
+    yy                              # copies whole line
+    p                               # paste at the end of the cursor  
+    P                               # paste at the start of the cursor 
+    k                               # replace
+    c                               # enters the insert mode
+    cc                              # enters the insert instead of only deleting line
+    w                               # jump from word to the next word
+    W                               # same as w seperaion only by spaces
+    e                               # jump forwards
+    b                               # w but backwords
+    i                               # jumps to the end of a word
+    ==                              # indents correctly
+    %                               # you can jump between 'symbols'
+    \text                           # finds the text
+        n                           # jumps to the next 'text'
+        N                           # jumps backwords
+    ?text                           # searches backwords
+        #                           # jumps backwards
+        *                           # to next appearance
+    m<letter>                       # setting waypoint (m) then anything you want
+        '<letter>                   # jumps to waypoint
+    zz                              # centers my cursor (even if no line under)
+    you can combine stuff:
+        dw                          # deletes next word
+        2dw                         # delets next 2 word
+        gg=G                        # indents the whole file
+        if you are in a word:
+            diw              
+            ciw       
+            di"                     # delete in " mark    
+    esc                             # gets me back to normal mode
+-----------
+
+    
+Visual line mode
+----------------
+######## You can only selct lines ######## 
+shift + V                           # opens this mode
+
+----------------
+
+
+Visual block mode
+-----------------
+######## You can select column wise ########
+crtl + v                            # to enter
+   
+    
+
+
+navigation
+----------
+number + arrow(uo/down/right/left)  # moves the amount of lines 
+h - left
+j - down
+k - up
+l - right
+
+
+########### alternative neovim: sudo apt install neovim ###########
+https://github.com/junegunn/vim-plug
+copy:
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+       
+cd ~/.config/nvim
+cat init.vim
+
+call plug#begin()
+
+call plug#end()
+::PlugInstall
+
+
+changing vim settings
+---------------------
+~/.vimrc                            # location of settings file

@@ -1,0 +1,25 @@
+ how to get Help:
+    man <tool>                  # small dokumentation
+    <tool> --help               # tells us the optinonal parameters
+    <tool> -h                   # short version
+    <tool> --help all           # gives all optional paramters
+    apropos <keyword>           # searches desciption for instances of a given keyword
+    https://explainshell.com
+    
+helpfull tools:
+    whoami                      # Display current username
+    id                          # Returns user identity
+    hostname                    # Sets or prints name of current host system
+    uname                       # basic Information about operating system name and system hardware
+    pwd                         # returns working directory name
+    ifconfig                    # assign or view  address to network interface and/or configure network interface parameters
+    ip                          # show or manipulate routing, network devices, interface adn tunnels
+    netstat                     # shows network status
+    ss                          # investigate sockets
+    ps                          # Shows process status
+    who                         # Displays who is logged in
+    env                         # prints enviroment or sets and executes command
+    lsblk                       # lists blocks devices
+    lsusb                       # Lists USB devices
+    lsof                        # Lists opened files
+    lspci                       # Lists PCI devieces
