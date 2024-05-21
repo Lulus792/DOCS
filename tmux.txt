@@ -18,3 +18,13 @@ tmux ls       -   shows a list of the started sessions
 tmux attach -t <name>   -   to reopen sesssion
 <Prefix> + s  -   shows a list with the sessions
   - switch with <k>/<r>
+
+
+<Prefix> + c  - Create window
+<Prefix> + ,  - Rename window
+<Prefix> + &  - Close current window
+<Prefix> + w  - list window
+<Prefix> + p  - previous window
+<Prefix> + n  - next window
+<Prefix> + 0..9 - Swich/select window by number
+<Prefix> + x  - close current pane
